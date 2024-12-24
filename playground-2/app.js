@@ -5,10 +5,18 @@ let isStudent = false;
 let person1 = {
     name: 'Erick',
     age: 40,
-    isStudent: false
+    isStudent: false,
+    address: {
+        city: 'Embu',
+        street: 'Kangaru'
+    }
 };
 let person2 = {
     name: 'Jack',
     age: 20,
-    isStudent: true
+    isStudent: true,
+    address: {
+        city: 'Embu',
+        street: 'Kangaru'
+    }
 };

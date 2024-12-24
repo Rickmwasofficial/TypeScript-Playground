@@ -7,20 +7,34 @@ let isStudent: boolean = false
 
 // Declaring custom object types
 
+type Address = {
+    street: string
+    city: string
+}
+
 type Person = {
     name: string
     age: number
     isStudent: boolean
+    address: Address
 }
 
 let person1: Person = {
     name: 'Erick',
     age: 40,
-    isStudent: false
+    isStudent: false,
+    address: {
+        city: 'Embu',
+        street: 'Kangaru'
+    }
 }
 
 let person2: Person = {
     name: 'Jack',
     age: 20,
-    isStudent: true
+    isStudent: true,
+    address: {
+        city: 'Embu',
+        street: 'Kangaru'
+    }
 }
