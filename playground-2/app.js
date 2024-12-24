@@ -1,9 +1,14 @@
 "use strict";
-var Services;
-(function (Services) {
-    Services["code"] = "We help write scalable code for your organization";
-    Services["design"] = "We help design the best user interfaces for your websites";
-    Services["model"] = "We help train the best model for cv tasks";
-})(Services || (Services = {}));
-let model = Services.model;
-console.log(model);
+let myName = 'Erick';
+let numberOfWheels = 2;
+let isStudent = false;
+let person1 = {
+    name: 'Erick',
+    age: 40,
+    isStudent: false
+};
+let person2 = {
+    name: 'Jack',
+    age: 20,
+    isStudent: true
+};
