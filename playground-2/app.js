@@ -15,8 +15,14 @@ let person2 = {
     name: 'Jack',
     age: 20,
     isStudent: true,
-    address: {
-        city: 'Embu',
-        street: 'Kangaru'
-    }
 };
+function showDetails(person) {
+    if (person.address) {
+        console.log(`This is ${person.name}, He is ${person.age} and lives in ${person.address.street}, ${person.address.city}`);
+    }
+    else {
+        console.log(`Error: User ${person.name} has no address`);
+    }
+}
+showDetails(person1);
+showDetails(person2);
