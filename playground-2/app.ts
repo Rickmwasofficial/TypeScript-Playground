@@ -55,4 +55,17 @@ let people: Person[] = [person1, person2]
 // generics
 let people2: Array<Person> = [person1, person2]
 
-console.log(people2)
+// console.log(people2)
+
+// UNIONS
+
+type User = {
+    username: string
+    role: 'guest' | 'admin' | 'member' // unions
+}
+
+let user: User = {
+    username: 'Jill',
+    role: 'admin'
+}
+
