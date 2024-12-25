@@ -31,4 +31,34 @@ let age = [10, 30];
 let people = [person1, person2];
 // generics
 let people2 = [person1, person2];
-console.log(people2);
+let user1 = {
+    id: 1,
+    username: 'Jill',
+    role: 'admin'
+};
+let user2 = {
+    id: 2,
+    username: 'Jack',
+    role: 'admin'
+};
+let users = [user1, user2];
+// TYPE NARROWING
+function getUserDetails(identifier) {
+    if (typeof identifier === "string") {
+        let userFound = users.find(user => user.username == identifier);
+        if (!userFound) {
+            console.error('No user found');
+            return;
+        }
+        console.log(userFound);
+    }
+    else {
+        let userFound = users.find(user => user.id == identifier);
+        if (!userFound) {
+            console.error('No user found');
+            return;
+        }
+        console.log(userFound);
+    }
+}
+getUserDetails('Jack');

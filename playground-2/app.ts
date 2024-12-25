@@ -60,12 +60,43 @@ let people2: Array<Person> = [person1, person2]
 // UNIONS
 
 type User = {
+    id: number
     username: string
     role: 'guest' | 'admin' | 'member' // unions
 }
 
-let user: User = {
+let user1: User = {
+    id: 1,
     username: 'Jill',
     role: 'admin'
 }
 
+let user2: User = {
+    id: 2,
+    username: 'Jack',
+    role: 'admin'
+}
+
+let users: User[] = [user1, user2]
+
+// TYPE NARROWING
+
+function getUserDetails(identifier: string | number) {
+    if (typeof identifier === "string") {
+        let userFound = users.find(user => user.username == identifier)
+        if (!userFound) {
+            console.error('No user found')
+            return
+        }
+        console.log(userFound)
+    } else {
+        let userFound = users.find(user => user.id == identifier)
+        if (!userFound) {
+            console.error('No user found')
+            return
+        }
+        console.log(userFound)
+    }
+}
+
+getUserDetails('Jack')
