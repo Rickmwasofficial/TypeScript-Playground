@@ -44,5 +44,12 @@ function showDetails(person: Person) {
     }
 }
 
-showDetails(person1)
-showDetails(person2)
+// showDetails(person1)
+// showDetails(person2)
+
+// Typing arrays
+let age: number[] = [10, 30]
+
+let people: Person[] = [person1, person2]
+
+console.log(people)

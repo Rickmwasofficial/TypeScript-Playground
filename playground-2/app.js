@@ -24,5 +24,9 @@ function showDetails(person) {
         console.log(`Error: User ${person.name} has no address`);
     }
 }
-showDetails(person1);
-showDetails(person2);
+// showDetails(person1)
+// showDetails(person2)
+// Typing arrays
+let age = [10, 30];
+let people = [person1, person2];
+console.log(people);
