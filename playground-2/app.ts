@@ -81,7 +81,7 @@ let users: User[] = [user1, user2]
 
 // TYPE NARROWING
 
-function getUserDetails(identifier: string | number) {
+function getUserDetails(identifier: string | number): void {  // function return type
     if (typeof identifier === "string") {
         let userFound = users.find(user => user.username == identifier)
         if (!userFound) {
