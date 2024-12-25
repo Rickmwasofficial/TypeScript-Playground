@@ -52,4 +52,7 @@ let age: number[] = [10, 30]
 
 let people: Person[] = [person1, person2]
 
-console.log(people)
+// generics
+let people2: Array<Person> = [person1, person2]
+
+console.log(people2)

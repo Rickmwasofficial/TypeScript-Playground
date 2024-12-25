@@ -29,4 +29,6 @@ function showDetails(person) {
 // Typing arrays
 let age = [10, 30];
 let people = [person1, person2];
-console.log(people);
+// generics
+let people2 = [person1, person2];
+console.log(people2);
