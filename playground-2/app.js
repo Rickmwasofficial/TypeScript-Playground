@@ -31,13 +31,14 @@ let age = [10, 30];
 let people = [person1, person2];
 // generics
 let people2 = [person1, person2];
+let nextUserId = 1;
 let user1 = {
-    id: 1,
+    id: nextUserId++,
     username: 'Jill',
     role: 'admin'
 };
 let user2 = {
-    id: 2,
+    id: nextUserId++,
     username: 'Jack',
     role: 'admin'
 };
@@ -61,4 +62,23 @@ function getUserDetails(identifier) {
         console.log(userFound);
     }
 }
-getUserDetails('Jack');
+function updateUser(id, options) {
+    const foundUser = users.find(user => user.id == id);
+    if (!foundUser) {
+        console.error("User was not found");
+        return;
+    }
+    Object.assign(foundUser, options);
+}
+// console.log(users)
+updateUser(1, { username: "Jack" });
+updateUser(2, { username: "Jill" });
+// console.log(users)
+// Utility types - Omit Utility
+function addNewUser(newUser) {
+    let user = Object.assign({ id: nextUserId++ }, newUser);
+    users.push(user);
+    return user;
+}
+addNewUser({ username: 'john doe', role: 'guest' });
+console.log(users);

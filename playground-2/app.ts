@@ -65,14 +65,16 @@ type User = {
     role: 'guest' | 'admin' | 'member' // unions
 }
 
+let nextUserId = 1
+
 let user1: User = {
-    id: 1,
+    id: nextUserId++,
     username: 'Jill',
     role: 'admin'
 }
 
 let user2: User = {
-    id: 2,
+    id: nextUserId++,
     username: 'Jack',
     role: 'admin'
 }
@@ -99,4 +101,32 @@ function getUserDetails(identifier: string | number): void {  // function return
     }
 }
 
-getUserDetails('Jack')
+// getUserDetails('Jack')
+
+//  Utility Types -- Partial Utility 
+type UpdateUser = Partial<User>
+function updateUser(id: number, options: UpdateUser) {
+    const foundUser = users.find(user => user.id == id)
+    if (!foundUser) {
+        console.error("User was not found")
+        return
+    }
+    Object.assign(foundUser, options)
+}
+// console.log(users)
+
+updateUser(1, { username: "Jack" })
+updateUser(2, { username: "Jill" })
+
+// console.log(users)
+
+
+// Utility types - Omit Utility
+function addNewUser(newUser: Omit<User, 'id'>):User {
+    let user: User = {id: nextUserId++, ...newUser}
+    users.push(user)
+    return user
+}
+
+addNewUser({ username: 'john doe', role: 'guest' })
+console.log(users)
